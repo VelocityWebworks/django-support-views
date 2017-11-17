@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-support-views",
-    version="0.0.2",
+    version="0.0.3",
     author="John Leith",
     author_email="john@iglobalstores.com",
     packages=find_packages(),

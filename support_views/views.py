@@ -12,9 +12,10 @@ from django.http import HttpResponse
 from django.views.generic import View
 
 from user_agents import parse
+from rest_framework.views import APIView
 
 
-class SupportLogView(View):
+class SupportLogView(APIView):
     logger_name = "slack"
 
     def post(self, request):
@@ -35,7 +36,7 @@ on {os_family} {os_version}
 {image}""".format(**data)
 
     def generate_response(self):
-        return HttpResponse("OK")
+        return HttpResponse("{\"ok\": true}")
 
     def _dot_version(self, version):
         if isinstance(version, (list, tuple)):
